@@ -1,4 +1,7 @@
 import { MongoClient } from "mongodb";
+import express  from "express";
+
+const app = express();
 
 async function main() {
   const uri = "mongodb://127.0.0.1:27017";
@@ -14,3 +17,4 @@ async function main() {
 }
 
 main();
+app.listen(4000);
