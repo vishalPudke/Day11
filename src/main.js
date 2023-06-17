@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-import express  from "express";
+import express from "express";
 
 const app = express();
 
@@ -15,6 +15,7 @@ async function main() {
   await client.close();
   console.log("RecordAdded");
 }
+app.get("/main", main);
 
 main();
-app.listen(4000);
+app.listen(5000);
