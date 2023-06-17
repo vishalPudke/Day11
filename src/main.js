@@ -1,9 +1,9 @@
 import { MongoClient } from "mongodb";
 import express from "express";
-import cors from cors;
+import cors from "cors";
 
 const app = express();
-app.use(cors());
+app.use(cors()); //Allowing everyone
 
 async function addRecord(req, res) {
   const uri = "mongodb://127.0.0.1:27017";
@@ -15,11 +15,6 @@ async function addRecord(req, res) {
   await messageColl.insertOne(inputDoc);
 
   await client.close();
-  //   console.log("RecordAdded");
-  {
-    /**String response */
-  }
-  //   res.send("Record Added");
 
   //{/**JSON RESPONSE */}
   res.json({ opr: "success" });
